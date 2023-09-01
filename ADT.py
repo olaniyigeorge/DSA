@@ -46,11 +46,8 @@ class Stack():
 
 class Queue():
     '''
-    Implementation of a queue in Python
+    Implementation of a queue using python lists as a container
     '''
-    container = []
-    capacity = 0
-
     container = []
     capacity = 0
 
@@ -65,10 +62,6 @@ class Queue():
     def __str__(self):
         return str(self.container)
     
-    def pop(self):
-        self.container = self.container[:-1]
-        return self.container
-
 
     def push(self, toBeAdded=None):
         if not toBeAdded:
@@ -76,6 +69,12 @@ class Queue():
         if len(self.container) == self.capacity:
             self.capacity = self.capacity + 1
         self.container.append(toBeAdded)
+    
+    
+    def pop(self):
+        popped = self.container[0]
+        self.container = self.container[1:]
+        return popped
 
 
     def isEmpty(self):
@@ -88,3 +87,5 @@ class Queue():
             return True
         return False
 
+    def size(self):
+        return len(self.container)
