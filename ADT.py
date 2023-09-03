@@ -24,6 +24,9 @@ class Stack():
     def pop(self):
         self.container = self.container[:-1]
         return self.container
+    
+    def peek(self):
+        return self.container[-1:][0]
 
 
     def push(self, toBeAdded=None):
