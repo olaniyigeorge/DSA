@@ -1,42 +1,32 @@
 from ADT import Stack, Queue
 
-
-
 def test_Stack():
     s= Stack((5,))
     d= Stack()
 
-    print(s)
-    print(d)
-    print(d.isEmpty())
-    print("")
+
+    assert d.isEmpty() == True
+
     d.push(1)
     d.push(2)
     d.push(3)
     d.push(4)
-    print(d)
-    d.pop()
-    print(d)
-    d.pop()
-    print(d)
+
+    assert d.pop() == [1,2,3]
+    assert d.peek() == 3
+
     d.push(5)
-    print(d)
-    d.pop()
-    print(d)
+
+    
+    assert d.pop() == [1,2,3]
+    assert d.pop() == [1,2]
+
     d.push(12)
-    d.push(23)
-    d.push(34)
-    s.push(45)
-    d.push(13)
-    d.push(24)
-    s.push(35)
-    d.push(46)
     d.push(35)
     d.push(46)
-    print(d)
-    print(s)
-    print(d.isEmpty())
-    print(d.isFull())
+
+    assert d.isEmpty() == False
+    assert d.isFull() == False
 
 def test_Queue():
     s= Queue((5,))
@@ -64,6 +54,3 @@ def test_Queue():
 
     assert d.isEmpty() == False
     assert d.isFull() == False
-
-
-test_Queue()
