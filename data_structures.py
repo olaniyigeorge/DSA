@@ -80,3 +80,41 @@ print("------------")
 
 l.add(50)
 print(l)
+
+
+class Node():
+
+    def __init__(self, data,  next=None, parent=None):
+        self.data = data
+        self.parent = parent
+        self.next_node = next
+
+class LinkedList():
+
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next_node:
+            current = current.next_node
+        current.next_node = new_node
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next_node
+        print()
+
+
+lst= LinkedList()
+lst.append(1)
+lst.append(2)
+lst.append(3)
+lst.append(4)
+lst.display()
